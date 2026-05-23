@@ -1,0 +1,14 @@
+# Ignorer tous les fichiers de données CSV (à la racine et dans les sous-dossiers)
+*.csv
+
+# Ignorer tout le contenu du dossier des modèles sauvegardés
+models/
+
+# Ignorer tout le contenu du dossier des logs TensorBoard
+tensorboard_logs/
+
+# Options additionnelles recommandées pour un projet Python/RL
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.env
