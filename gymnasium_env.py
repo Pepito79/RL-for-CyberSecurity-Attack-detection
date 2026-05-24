@@ -34,6 +34,7 @@ class NetworkSecurityEnv(gym.Env):
                     f"Missing scaler profile file at {scaler_path}. Run training first."
                 )
 
+        # Two acctions : honeypot or production
         self.action_space = spaces.Discrete(2)
         num_features = self.features.shape[1]
         self.observation_space = spaces.Box(

@@ -14,7 +14,10 @@ def train_agent():
     # Load environment explicitly flagged for training
     train_csv = "/home/pepito/Documents/Python/Reddis/RL/dataset_TRAIN_clean.csv"
     env = NetworkSecurityEnv(train_csv, is_training=True)
-    env = Monitor(env)
+    log_file = "/home/pepito/Documents/Python/Reddis/RL/training_stats.csv"
+
+    # On passe le nom du fichier au Monitor
+    env = Monitor(env, log_file)
 
     checkpoint_callback = CheckpointCallback(
         save_freq=50000,
@@ -41,7 +44,7 @@ def train_agent():
     )
 
     print("Executing model optimization loop...")
-    model.learn(total_timesteps=200000, callback=checkpoint_callback)
+    model.learn(total_timesteps=200000, callback=checkpoint_callback, log_interval=1)
     print("Training loop finished successfully.")
 
     model.save("/home/pepito/Documents/Python/Reddis/RL/dqn_network_security_final")
