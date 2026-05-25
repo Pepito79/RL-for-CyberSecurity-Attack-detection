@@ -1,8 +1,12 @@
 import os
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
+
+BASE_DIR = Path(__file__).resolve().parent
+DATA_DIR = BASE_DIR.parent / "archive"
 
 FEATURES_TO_KEEP = [
     "Destination Port",
@@ -28,13 +32,12 @@ FEATURES_TO_KEEP = [
 ]
 FINAL_COLUMNS = FEATURES_TO_KEEP + ["Label"]
 
-# On regroupe ABSOLUMENT TOUS les fichiers jours de la semaine pour avoir toutes les attaques
 TOUS_LES_FICHIERS = [
-    "/home/pepito/Documents/Python/Reddis/RL/Data/Monday-WorkingHours.pcap_ISCX.csv",
-    "/home/pepito/Documents/Python/Reddis/RL/Data/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
-    "/home/pepito/Documents/Python/Reddis/RL/Data/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
-    "/home/pepito/Documents/Python/Reddis/RL/Data/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
-    "/home/pepito/Documents/Python/Reddis/RL/Data/Wednesday-workingHours.pcap_ISCX.csv",
+    str(DATA_DIR / "Monday-WorkingHours.pcap_ISCX.csv"),
+    str(DATA_DIR / "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"),
+    str(DATA_DIR / "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv"),
+    str(DATA_DIR / "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv"),
+    str(DATA_DIR / "Wednesday-workingHours.pcap_ISCX.csv"),
 ]
 
 
@@ -73,15 +76,13 @@ def generer_datasets_melanges(
     df_train = df_train.reset_index(drop=True)
     df_test = df_test.reset_index(drop=True)
 
-    # Sauvegarde Train
-    train_path = f"/home/pepito/Documents/Python/Reddis/RL/{train_filename}"
+    train_path = str(BASE_DIR / train_filename)
     print(
         f"Sauvegarde du dataset d'ENTRAÎNEMENT : {train_path} ({len(df_train)} lignes)"
     )
     df_train.to_csv(train_path, index=False)
 
-    # Sauvegarde Test
-    test_path = f"/home/pepito/Documents/Python/Reddis/RL/{test_filename}"
+    test_path = str(BASE_DIR / test_filename)
     print(f"Sauvegarde du dataset de TEST : {test_path} ({len(df_test)} lignes)")
     df_test.to_csv(test_path, index=False)
 

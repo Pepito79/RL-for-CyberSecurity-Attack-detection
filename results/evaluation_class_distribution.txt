@@ -1,0 +1,8 @@
+True labels vs predicted actions
+================================
+
+This graph compares the real class distribution with the agent action distribution.
+If predicted HONEYPOT is much higher than true ATTACK, the model is probably too aggressive.
+If predicted HONEYPOT is much lower than true ATTACK, the model may miss attacks.
+True BENIGN=272042, true ATTACK=108998.
+Predicted PRODUCTION=270298, predicted HONEYPOT=110742.

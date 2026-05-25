@@ -1,0 +1,7 @@
+Evaluation cumulative reward over time
+======================================
+
+This graph shows how much reward the trained policy accumulates on the test dataset.
+A steady increase means the policy is making mostly correct decisions.
+Sudden decreases indicate costly mistakes, especially false negatives.
+Final cumulative reward: 787944.00.
