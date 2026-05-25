@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import gymnasium as gym
 import joblib
 import numpy as np
@@ -5,14 +7,18 @@ import pandas as pd
 from gymnasium import spaces
 from sklearn.preprocessing import StandardScaler
 
+BASE_DIR = Path(__file__).resolve().parent
+
 
 class NetworkSecurityEnv(gym.Env):
     def __init__(
         self,
         csv_path,
         is_training=True,
-        scaler_path="/home/pepito/Documents/Python/Reddis/RL/network_scaler.pkl",
+        scaler_path=None,
     ):
+        if scaler_path is None:
+            scaler_path = str(BASE_DIR / "network_scaler.pkl")
         super(NetworkSecurityEnv, self).__init__()
 
         self.df = pd.read_csv(csv_path)

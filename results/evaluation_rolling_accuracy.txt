@@ -1,0 +1,7 @@
+Evaluation rolling accuracy
+===========================
+
+This graph shows local accuracy over a moving window of 1000 flows.
+It helps detect parts of the dataset where the model performs worse than its global score.
+Drops can indicate a harder attack family, distribution shift, or a sequence of false alarms.
+Last rolling accuracy: 99.00%.

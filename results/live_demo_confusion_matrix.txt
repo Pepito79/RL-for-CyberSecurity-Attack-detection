@@ -1,0 +1,8 @@
+Confusion matrix
+================
+
+This graph compares the model decisions with the true traffic labels.
+Top-left is benign traffic correctly sent to production.
+Bottom-right is attack traffic correctly redirected to the honeypot.
+Bottom-left is the most dangerous error: an attack sent to production.
+Accuracy: 99.80%. TN=358, FP=0, FN=1, TP=141.

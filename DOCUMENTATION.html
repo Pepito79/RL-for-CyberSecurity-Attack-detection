@@ -1,0 +1,806 @@
+<!DOCTYPE html><html><head>
+      <title>DOCUMENTATION</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\zaabo\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.26\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-details{margin:0;padding:0;border:none}.markdown-preview .md-toc summary.md-toc-link-wrapper{cursor:pointer;list-style-position:outside}.markdown-preview .md-toc summary.md-toc-link-wrapper::marker{font-size:.85em}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='0']{margin-left:12px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='1']{margin-left:28px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='2']{margin-left:44px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='3']{margin-left:60px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='4']{margin-left:76px}.markdown-preview .md-toc .md-toc-link-wrapper[data-level='5']{margin-left:80px}.markdown-preview a.tag,.markdown-preview a.tag:active,.markdown-preview a.tag:link,.markdown-preview a.tag:visited,.markdown-preview span.tag:not(.token){display:inline-block;background-color:var(--vscode-badge-background,rgba(127,127,127,.18));color:var(--vscode-badge-foreground,currentColor);border-radius:2em;font-size:.85em;font-weight:500;padding:.05em .55em;line-height:1.5;white-space:nowrap;text-decoration:none;text-shadow:none;box-shadow:none;transition:background-color .12s ease,opacity .12s ease}.markdown-preview a.tag{cursor:pointer}.markdown-preview a.tag:focus,.markdown-preview a.tag:hover{background-color:var(--vscode-badge-background,rgba(127,127,127,.32));color:var(--vscode-badge-foreground,currentColor);opacity:.85;text-decoration:none;outline:0}.markdown-preview .wikilink-embed-content{border-left:3px solid var(--vscode-textBlockQuote-border,rgba(128,128,128,.3));background:var(--vscode-textBlockQuote-background,rgba(128,128,128,.05));margin:.5em 0;padding:.5em .75em;border-radius:0 3px 3px 0}.markdown-preview .wikilink-embed-content.wikilink-embed-error{border-left-color:var(--vscode-errorForeground,#cf222e);color:var(--vscode-errorForeground,#cf222e);font-style:italic;opacity:.8}.markdown-preview .wikilink-embed-content h1:first-child,.markdown-preview .wikilink-embed-content h2:first-child,.markdown-preview .wikilink-embed-content h3:first-child,.markdown-preview .wikilink-embed-content h4:first-child,.markdown-preview .wikilink-embed-content h5:first-child,.markdown-preview .wikilink-embed-content h6:first-child{margin-top:.25em}.markdown-preview .wikilink-embed-content .wikilink-embed-content{margin:.25em 0;padding:.25em .5em}.markdown-preview .block-id{display:none}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-details{margin:0;padding:0;border:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='0']{padding-left:0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='1']{padding-left:16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='2']{padding-left:32px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='3']{padding-left:48px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='4']{padding-left:64px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper[data-level='5']{padding-left:80px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="systeme-de-detection-dintrusion-par-apprentissage-par-renforcement-dqn">Systeme de Detection d'Intrusion par Apprentissage par Renforcement (DQN) </h1>
+<h2 id="table-des-matieres">Table des matieres </h2>
+<ol>
+<li><a href="#1-vue-densemble-du-projet">Vue d'ensemble du projet</a></li>
+<li><a href="#2-architecture-globale">Architecture globale</a></li>
+<li><a href="#3-le-dataset--cic-ids2017">Le dataset : CIC-IDS2017</a></li>
+<li><a href="#4-script-1--cleannerpy---preprocessing-des-donnees">Script 1 : cleanner.py - Preprocessing des donnees</a></li>
+<li><a href="#5-script-2--gymnasium_envpy---environnement-de-reinforcement-learning">Script 2 : gymnasium_env.py - Environnement de Reinforcement Learning</a></li>
+<li><a href="#6-script-3--rl_trainpy---entrainement-de-lagent-dqn">Script 3 : RL_train.py - Entrainement de l'agent DQN</a></li>
+<li><a href="#7-script-4--test_modelpy---evaluation-formelle-du-modele">Script 4 : test_model.py - Evaluation formelle du modele</a></li>
+<li><a href="#8-script-5--live_demopy---demonstration-en-temps-reel">Script 5 : live_demo.py - Demonstration en temps reel</a></li>
+<li><a href="#9-pipeline-dexecution-complet">Pipeline d'execution complet</a></li>
+<li><a href="#10-fichiers-generes">Fichiers generes</a></li>
+<li><a href="#11-hyperparametres-et-choix-de-conception">Hyperparametres et choix de conception</a></li>
+</ol>
+<hr>
+<h2 id="1-vue-densemble-du-projet">1. Vue d'ensemble du projet </h2>
+<p>Ce projet implemente un <strong>Systeme de Detection d'Intrusion (IDS)</strong> base sur le <strong>Deep Q-Network (DQN)</strong>, un algorithme d'apprentissage par renforcement profond.</p>
+<h3 id="le-probleme-resolu">Le probleme resolu </h3>
+<p>Dans un reseau informatique, du trafic arrive en continu. Chaque paquet (ou flux reseau) est soit :</p>
+<ul>
+<li><strong>BENIGN</strong> : trafic legitime d'un utilisateur normal</li>
+<li><strong>ATTACK</strong> : trafic malveillant (DDoS, PortScan, attaques web, etc.)</li>
+</ul>
+<p>L'agent RL apprend a prendre une <strong>decision binaire</strong> pour chaque flux :</p>
+<ul>
+<li><strong>Action 0 (PRODUCTION)</strong> : laisser passer le trafic vers le serveur de production</li>
+<li><strong>Action 1 (HONEYPOT)</strong> : rediriger le trafic vers un honeypot (piege a attaquants)</li>
+</ul>
+<h3 id="pourquoi-le-reinforcement-learning-">Pourquoi le Reinforcement Learning ? </h3>
+<p>Contrairement a un classifieur supervise classique (Random Forest, SVM...), l'approche RL permet a l'agent de :</p>
+<ul>
+<li>Apprendre par <strong>essai-erreur</strong> via un systeme de recompenses/penalites</li>
+<li>S'adapter a des <strong>politiques de securite asymetriques</strong> (une attaque non detectee est bien plus grave qu'un faux positif)</li>
+<li>Evoluer potentiellement en <strong>temps reel</strong> face a de nouvelles menaces</li>
+</ul>
+<hr>
+<h2 id="2-architecture-globale">2. Architecture globale </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>archive/                          &lt;-- Donnees brutes CIC-IDS2017 (8 fichiers CSV)
+    Monday-WorkingHours.pcap_ISCX.csv
+    Tuesday-WorkingHours.pcap_ISCX.csv
+    Wednesday-workingHours.pcap_ISCX.csv
+    Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv
+    Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv
+    Friday-WorkingHours-Morning.pcap_ISCX.csv
+    Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv
+    Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv
+
+RL-for-CyberSecurity-Attack-detection/
+    cleanner.py                   &lt;-- Etape 1 : Preprocessing et nettoyage
+    gymnasium_env.py              &lt;-- Etape 2 : Environnement Gymnasium
+    RL_train.py                   &lt;-- Etape 3 : Entrainement DQN
+    test_model.py                 &lt;-- Etape 4 : Evaluation formelle
+    live_demo.py                  &lt;-- Etape 5 : Demo temps reel
+    network_scaler.pkl            &lt;-- Scaler sauvegarde (genere a l'entrainement)
+    dqn_network_security_final.zip &lt;-- Modele DQN entraine
+    pyproject.toml                &lt;-- Dependances Python
+</code></pre><h3 id="flux-de-donnees">Flux de donnees </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Fichiers CSV bruts (archive/)
+        |
+        v
+  [cleanner.py]  --&gt;  dataset_TRAIN_clean.csv (80%)
+        |              dataset_TEST_clean.csv  (20%)
+        v
+  [gymnasium_env.py]  --&gt;  Environnement Gymnasium avec systeme de recompenses
+        |
+        v
+  [RL_train.py]  --&gt;  dqn_network_security_final.zip (modele sauvegarde)
+        |              network_scaler.pkl (normalisation)
+        |              models/ (checkpoints intermediaires)
+        |              tensorboard_logs/ (metriques d'entrainement)
+        v
+  [test_model.py]  --&gt;  Matrice de confusion + rapport de classification
+  [live_demo.py]   --&gt;  Simulation paquet par paquet avec verdict en direct
+</code></pre><hr>
+<h2 id="3-le-dataset--cic-ids2017">3. Le dataset : CIC-IDS2017 </h2>
+<p>Le projet utilise le <strong>CIC-IDS2017</strong> (Canadian Institute for Cybersecurity), un dataset de reference en cybersecurite. Il contient du trafic reseau capture sur 5 jours avec des attaques injectees :</p>
+<table>
+<thead>
+<tr>
+<th>Jour</th>
+<th>Fichier</th>
+<th>Contenu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lundi</td>
+<td><code>Monday-WorkingHours</code></td>
+<td>Trafic 100% benin (baseline)</td>
+</tr>
+<tr>
+<td>Mardi</td>
+<td><code>Tuesday-WorkingHours</code></td>
+<td>Attaques Brute Force (FTP, SSH)</td>
+</tr>
+<tr>
+<td>Mercredi</td>
+<td><code>Wednesday-workingHours</code></td>
+<td>DoS (Slowloris, Hulk, GoldenEye), Heartbleed</td>
+</tr>
+<tr>
+<td>Jeudi matin</td>
+<td><code>Thursday-Morning-WebAttacks</code></td>
+<td>Attaques web (XSS, SQL Injection, Brute Force)</td>
+</tr>
+<tr>
+<td>Jeudi aprem</td>
+<td><code>Thursday-Afternoon-Infilteration</code></td>
+<td>Infiltration</td>
+</tr>
+<tr>
+<td>Vendredi matin</td>
+<td><code>Friday-Morning</code></td>
+<td>Botnet (Ares)</td>
+</tr>
+<tr>
+<td>Vendredi aprem</td>
+<td><code>Friday-Afternoon-DDos</code></td>
+<td>DDoS (LOIT)</td>
+</tr>
+<tr>
+<td>Vendredi aprem</td>
+<td><code>Friday-Afternoon-PortScan</code></td>
+<td>PortScan</td>
+</tr>
+</tbody>
+</table>
+<p>Chaque ligne du CSV represente un <strong>flux reseau</strong> decrit par ~80 features (port, duree, taille des paquets, flags TCP, etc.) et un label indiquant le type de trafic.</p>
+<hr>
+<h2 id="4-script-1--cleannerpy---preprocessing-des-donnees">4. Script 1 : <code>cleanner.py</code> - Preprocessing des donnees </h2>
+<h3 id="role">Role </h3>
+<p>Transforme les fichiers CSV bruts du dataset CIC-IDS2017 en deux fichiers propres, prets pour l'entrainement et le test.</p>
+<h3 id="fonctionnement-detaille">Fonctionnement detaille </h3>
+<h4 id="41-selection-des-features-features_to_keep">4.1. Selection des features (<code>FEATURES_TO_KEEP</code>) </h4>
+<p>Sur les ~80 features du dataset original, seules <strong>20 features</strong> sont conservees. Ce choix reduit le bruit et accelere l'entrainement :</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Signification</th>
+<th>Pourquoi elle est utile</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Destination Port</code></td>
+<td>Port de destination du flux</td>
+<td>Certains ports sont typiques d'attaques (ex: 22 pour SSH brute force)</td>
+</tr>
+<tr>
+<td><code>Flow Duration</code></td>
+<td>Duree totale du flux en microsecondes</td>
+<td>Les attaques DDoS ont souvent des durees anormales</td>
+</tr>
+<tr>
+<td><code>Total Fwd Packets</code></td>
+<td>Nombre de paquets envoyes (client -&gt; serveur)</td>
+<td>Volume anormal = signe d'attaque</td>
+</tr>
+<tr>
+<td><code>Total Backward Packets</code></td>
+<td>Nombre de paquets reponse (serveur -&gt; client)</td>
+<td>Ratio forward/backward revele des patterns</td>
+</tr>
+<tr>
+<td><code>Total Length of Fwd Packets</code></td>
+<td>Taille totale des paquets forward</td>
+<td>Attaques par injection = paquets volumineux</td>
+</tr>
+<tr>
+<td><code>Fwd Packet Length Max</code></td>
+<td>Taille max d'un paquet forward</td>
+<td>Detecte les gros payloads malveillants</td>
+</tr>
+<tr>
+<td><code>Fwd Packet Length Mean</code></td>
+<td>Taille moyenne des paquets forward</td>
+<td>Baseline du trafic normal</td>
+</tr>
+<tr>
+<td><code>Bwd Packet Length Max</code></td>
+<td>Taille max d'un paquet backward</td>
+<td>Exfiltration de donnees = reponses volumineuses</td>
+</tr>
+<tr>
+<td><code>Flow Bytes/s</code></td>
+<td>Debit en octets par seconde</td>
+<td>DDoS = debit anormalement eleve</td>
+</tr>
+<tr>
+<td><code>Flow Packets/s</code></td>
+<td>Debit en paquets par seconde</td>
+<td>Idem, complementaire au debit en octets</td>
+</tr>
+<tr>
+<td><code>Flow IAT Mean</code></td>
+<td>Temps moyen entre les paquets du flux</td>
+<td>Trafic automatise = IAT tres regulier</td>
+</tr>
+<tr>
+<td><code>Flow IAT Std</code></td>
+<td>Ecart-type du temps inter-paquets</td>
+<td>Faible std = probable bot, pas un humain</td>
+</tr>
+<tr>
+<td><code>Flow IAT Max</code></td>
+<td>Temps max entre deux paquets</td>
+<td>Detecte les connexions persistantes</td>
+</tr>
+<tr>
+<td><code>Fwd IAT Total</code></td>
+<td>Somme des temps inter-paquets forward</td>
+<td>Profil temporel de l'emetteur</td>
+</tr>
+<tr>
+<td><code>Fwd Packets/s</code></td>
+<td>Paquets forward par seconde</td>
+<td>Taux d'emission du client</td>
+</tr>
+<tr>
+<td><code>Packet Length Mean</code></td>
+<td>Longueur moyenne de tous les paquets</td>
+<td>Signature globale du flux</td>
+</tr>
+<tr>
+<td><code>SYN Flag Count</code></td>
+<td>Nombre de flags SYN</td>
+<td>SYN flood = DDoS classique</td>
+</tr>
+<tr>
+<td><code>RST Flag Count</code></td>
+<td>Nombre de flags RST</td>
+<td>Port scan = beaucoup de RST (port ferme)</td>
+</tr>
+<tr>
+<td><code>PSH Flag Count</code></td>
+<td>Nombre de flags PSH</td>
+<td>Injection de donnees = PSH frequent</td>
+</tr>
+<tr>
+<td><code>ACK Flag Count</code></td>
+<td>Nombre de flags ACK</td>
+<td>Profil de la connexion TCP</td>
+</tr>
+</tbody>
+</table>
+<p>Une 21eme colonne <strong><code>Label</code></strong> est ajoutee : c'est la verite terrain (<code>BENIGN</code> ou le type d'attaque).</p>
+<h4 id="42-chargement-par-chunks-chunksize50000">4.2. Chargement par chunks (<code>chunksize=50000</code>) </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-for">for</span> chunk <span class="token keyword keyword-in">in</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>f<span class="token punctuation">,</span> chunksize<span class="token operator">=</span><span class="token number">50000</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+</code></pre><p>Les fichiers CSV font plusieurs centaines de Mo. Au lieu de tout charger en RAM d'un coup, pandas lit <strong>50 000 lignes a la fois</strong>. Chaque chunk est immediatement filtre pour ne garder que les 21 colonnes utiles, puis stocke. Cela evite les erreurs de memoire (OutOfMemoryError).</p>
+<h4 id="43-nettoyage-des-valeurs-problematiques">4.3. Nettoyage des valeurs problematiques </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df_global <span class="token operator">=</span> df_global<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token punctuation">[</span>np<span class="token punctuation">.</span>inf<span class="token punctuation">,</span> <span class="token operator">-</span>np<span class="token punctuation">.</span>inf<span class="token punctuation">]</span><span class="token punctuation">,</span> np<span class="token punctuation">.</span>nan<span class="token punctuation">)</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+</code></pre><p>Certaines features comme <code>Flow Bytes/s</code> ou <code>Flow Packets/s</code> peuvent contenir :</p>
+<ul>
+<li><strong><code>Inf</code> / <code>-Inf</code></strong> : quand la duree du flux est 0 (division par zero)</li>
+<li><strong><code>NaN</code></strong> : quand une donnee est manquante</li>
+</ul>
+<p>Ces valeurs sont remplacees par <strong>0</strong> pour eviter de casser le StandardScaler et le reseau de neurones.</p>
+<h4 id="44-split-traintest-8020">4.4. Split train/test (80/20) </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>df_train<span class="token punctuation">,</span> df_test <span class="token operator">=</span> train_test_split<span class="token punctuation">(</span>df_global<span class="token punctuation">,</span> test_size<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">42</span><span class="token punctuation">)</span>
+</code></pre><ul>
+<li><strong>80%</strong> des donnees → <code>dataset_TRAIN_clean.csv</code> (entrainement)</li>
+<li><strong>20%</strong> des donnees → <code>dataset_TEST_clean.csv</code> (test)</li>
+<li><code>random_state=42</code> garantit un split <strong>reproductible</strong> : chaque execution produit exactement le meme decoupage</li>
+<li><code>shuffle=True</code> (par defaut) melange les donnees avant le split, ce qui assure que les deux ensembles contiennent un mix de tous les jours et tous les types d'attaques</li>
+</ul>
+<h4 id="45-fichiers-utilises">4.5. Fichiers utilises </h4>
+<p>Le script ne prend que <strong>5 fichiers sur 8</strong> disponibles dans <code>archive/</code>. Les fichiers exclus sont :</p>
+<ul>
+<li><code>Tuesday-WorkingHours</code> (Brute Force FTP/SSH)</li>
+<li><code>Thursday-Afternoon-Infilteration</code> (Infiltration)</li>
+<li><code>Friday-Morning</code> (Botnet)</li>
+</ul>
+<p>Ce choix est delibere : le modele est entraine sur un sous-ensemble representatif d'attaques.</p>
+<hr>
+<h2 id="5-script-2--gymnasium_envpy---environnement-de-reinforcement-learning">5. Script 2 : <code>gymnasium_env.py</code> - Environnement de Reinforcement Learning </h2>
+<h3 id="role-1">Role </h3>
+<p>Definit l'<strong>environnement Gymnasium</strong> dans lequel l'agent DQN evolue. C'est le coeur du systeme RL : il transforme le probleme de detection d'intrusion en un probleme de decision sequentielle.</p>
+<h3 id="concepts-cles-du-reinforcement-learning">Concepts cles du Reinforcement Learning </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>                    observation (features du flux)
+                           |
+                           v
+        +------------------+------------------+
+        |           AGENT (DQN)               |
+        |  Reseau de neurones qui decide      |
+        +------------------+------------------+
+                           |
+                     action (0 ou 1)
+                           |
+                           v
+        +------------------+------------------+
+        |      ENVIRONNEMENT (NetworkSecurityEnv)    |
+        |  Donne la recompense et le prochain flux   |
+        +------------------+------------------+
+                           |
+                    reward + next_obs
+                           |
+                           v
+                    (cycle suivant)
+</code></pre><h3 id="fonctionnement-detaille-1">Fonctionnement detaille </h3>
+<h4>5.1. Initialisation (<code>__init__</code>) {#51-initialisation-<strong>init</strong> }</h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> csv_path<span class="token punctuation">,</span> is_training<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> scaler_path<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+</code></pre><p><strong>Parametres :</strong></p>
+<ul>
+<li><code>csv_path</code> : chemin vers le CSV nettoye (train ou test)</li>
+<li><code>is_training</code> : flag qui controle le comportement du scaler</li>
+<li><code>scaler_path</code> : chemin vers le fichier de normalisation</li>
+</ul>
+<p><strong>Chargement des donnees :</strong></p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>self<span class="token punctuation">.</span>df <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>csv_path<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>labels <span class="token operator">=</span> self<span class="token punctuation">.</span>df<span class="token punctuation">[</span><span class="token string">"Label"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>values        <span class="token comment"># Ex: ["BENIGN", "DDoS", "BENIGN", ...]</span>
+raw_features <span class="token operator">=</span> self<span class="token punctuation">.</span>df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>columns<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"Label"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>values  <span class="token comment"># Matrice numerique (N x 20)</span>
+</code></pre><p>Le CSV est charge entierement en memoire. Les labels sont separes des features.</p>
+<p><strong>Normalisation (StandardScaler) :</strong></p>
+<p>La normalisation est <strong>critique</strong> pour un reseau de neurones. Les features ont des echelles tres differentes :</p>
+<ul>
+<li><code>Destination Port</code> : 0 a 65535</li>
+<li><code>Flow Duration</code> : 0 a plusieurs millions (microsecondes)</li>
+<li><code>SYN Flag Count</code> : 0 a quelques dizaines</li>
+</ul>
+<p>Le <code>StandardScaler</code> transforme chaque feature pour qu'elle ait une <strong>moyenne de 0</strong> et un <strong>ecart-type de 1</strong> :</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>x_normalise = (x - moyenne) / ecart_type
+</code></pre><p><strong>Mode entrainement (<code>is_training=True</code>) :</strong></p>
+<ol>
+<li>Le scaler <strong>apprend</strong> les parametres (moyenne, ecart-type) sur les donnees d'entrainement avec <code>fit_transform()</code></li>
+<li>Le scaler est <strong>sauvegarde</strong> dans <code>network_scaler.pkl</code> avec <code>joblib.dump()</code></li>
+</ol>
+<p><strong>Mode evaluation (<code>is_training=False</code>) :</strong></p>
+<ol>
+<li>Le scaler est <strong>charge</strong> depuis <code>network_scaler.pkl</code> avec <code>joblib.load()</code></li>
+<li>Les donnees de test sont transformees avec les <strong>memes parametres</strong> que l'entrainement via <code>transform()</code></li>
+</ol>
+<p>C'est essentiel : si on recalculait le scaler sur les donnees de test, les valeurs normalisees seraient differentes et le modele ne fonctionnerait pas correctement.</p>
+<p><strong>Espace d'actions et d'observations :</strong></p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>self<span class="token punctuation">.</span>action_space <span class="token operator">=</span> spaces<span class="token punctuation">.</span>Discrete<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>         <span class="token comment"># 2 actions possibles : 0 ou 1</span>
+self<span class="token punctuation">.</span>observation_space <span class="token operator">=</span> spaces<span class="token punctuation">.</span>Box<span class="token punctuation">(</span>            <span class="token comment"># Vecteur continu de 20 features</span>
+    low<span class="token operator">=</span><span class="token operator">-</span>np<span class="token punctuation">.</span>inf<span class="token punctuation">,</span> high<span class="token operator">=</span>np<span class="token punctuation">.</span>inf<span class="token punctuation">,</span>
+    shape<span class="token operator">=</span><span class="token punctuation">(</span>num_features<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>np<span class="token punctuation">.</span>float32
+<span class="token punctuation">)</span>
+</code></pre><ul>
+<li><code>Discrete(2)</code> : l'agent choisit entre 0 (PRODUCTION) et 1 (HONEYPOT)</li>
+<li><code>Box(shape=(20,))</code> : l'observation est un vecteur de 20 nombres reels (les features normalisees)</li>
+</ul>
+<h4 id="52-reset-reset">5.2. Reset (<code>reset</code>) </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">reset</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> seed<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">,</span> options<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    self<span class="token punctuation">.</span>current_step <span class="token operator">=</span> <span class="token number">0</span>
+    obs <span class="token operator">=</span> self<span class="token punctuation">.</span>features<span class="token punctuation">[</span>self<span class="token punctuation">.</span>current_step<span class="token punctuation">]</span><span class="token punctuation">.</span>astype<span class="token punctuation">(</span>np<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> obs<span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre><p>Remet l'environnement au debut du dataset. Retourne la premiere observation (le premier flux reseau normalise).</p>
+<h4 id="53-step-step---le-systeme-de-recompenses">5.3. Step (<code>step</code>) - Le systeme de recompenses </h4>
+<p>C'est la fonction la plus importante. A chaque etape, l'agent recoit une observation, choisit une action, et l'environnement retourne une <strong>recompense</strong>.</p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-def">def</span> <span class="token function">step</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> action<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    true_label <span class="token operator">=</span> self<span class="token punctuation">.</span>labels<span class="token punctuation">[</span>self<span class="token punctuation">.</span>current_step<span class="token punctuation">]</span>
+
+    <span class="token keyword keyword-if">if</span> true_label <span class="token operator">==</span> <span class="token string">"BENIGN"</span><span class="token punctuation">:</span>
+        reward <span class="token operator">=</span> <span class="token number">1.0</span> <span class="token keyword keyword-if">if</span> action <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword keyword-else">else</span> <span class="token operator">-</span><span class="token number">2.0</span>
+    <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+        reward <span class="token operator">=</span> <span class="token number">5.0</span> <span class="token keyword keyword-if">if</span> action <span class="token operator">==</span> <span class="token number">1</span> <span class="token keyword keyword-else">else</span> <span class="token operator">-</span><span class="token number">20.0</span>
+</code></pre><p><strong>Matrice de recompenses :</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Action 0 (PRODUCTION)</th>
+<th>Action 1 (HONEYPOT)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trafic BENIGN</strong></td>
+<td><strong>+1.0</strong> (correct)</td>
+<td><strong>-2.0</strong> (faux positif)</td>
+</tr>
+<tr>
+<td><strong>Trafic ATTACK</strong></td>
+<td><strong>-20.0</strong> (fuite !)</td>
+<td><strong>+5.0</strong> (correct)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Justification de l'asymetrie :</strong></p>
+<ul>
+<li><strong>+1.0 pour BENIGN → PRODUCTION</strong> : recompense de base pour une decision correcte</li>
+<li><strong>-2.0 pour BENIGN → HONEYPOT</strong> : penalite moderee pour un faux positif (un utilisateur legitime serait bloque, c'est genant mais pas dangereux)</li>
+<li><strong>+5.0 pour ATTACK → HONEYPOT</strong> : forte recompense pour avoir detecte une attaque (5x plus que la classification correcte du benin, pour encourager la detection)</li>
+<li><strong>-20.0 pour ATTACK → PRODUCTION</strong> : penalite <strong>massive</strong> pour une attaque non detectee (c'est le pire scenario : l'attaque atteint le serveur de production). Ce ratio 20:1 par rapport a la recompense de base force l'agent a ne <strong>jamais</strong> laisser passer une attaque, meme au prix de quelques faux positifs</li>
+</ul>
+<p>Cette asymetrie reflete la realite : en cybersecurite, <strong>rater une attaque est infiniment plus grave que bloquer un utilisateur legitime par erreur</strong>.</p>
+<p><strong>Fin de l'episode :</strong></p>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>self<span class="token punctuation">.</span>current_step <span class="token operator">+=</span> <span class="token number">1</span>
+terminated <span class="token operator">=</span> self<span class="token punctuation">.</span>current_step <span class="token operator">&gt;=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>df<span class="token punctuation">)</span>
+</code></pre><p>L'episode se termine quand tous les flux du dataset ont ete traites. L'agent parcourt le dataset <strong>sequentiellement</strong>, un flux a la fois.</p>
+<hr>
+<h2 id="6-script-3--rl_trainpy---entrainement-de-lagent-dqn">6. Script 3 : <code>RL_train.py</code> - Entrainement de l'agent DQN </h2>
+<h3 id="role-2">Role </h3>
+<p>Entraine un agent <strong>Deep Q-Network (DQN)</strong> sur l'environnement de securite reseau.</p>
+<h3 id="quest-ce-que-dqn-">Qu'est-ce que DQN ? </h3>
+<p>DQN (Deep Q-Network) est un algorithme de Reinforcement Learning qui utilise un <strong>reseau de neurones profond</strong> pour approximer la <strong>fonction Q</strong> :</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Q(s, a) = recompense esperee en prenant l'action a dans l'etat s, puis en suivant la politique optimale
+</code></pre><p>L'agent apprend a estimer, pour chaque flux reseau observe (etat <code>s</code>), <strong>quelle action</strong> (0=Production ou 1=Honeypot) maximise la recompense totale future.</p>
+<h3 id="fonctionnement-detaille-2">Fonctionnement detaille </h3>
+<h4 id="61-detection-du-materiel">6.1. Detection du materiel </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>device <span class="token operator">=</span> torch<span class="token punctuation">.</span>device<span class="token punctuation">(</span><span class="token string">"cuda"</span> <span class="token keyword keyword-if">if</span> torch<span class="token punctuation">.</span>cuda<span class="token punctuation">.</span>is_available<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword keyword-else">else</span> <span class="token string">"cpu"</span><span class="token punctuation">)</span>
+</code></pre><p>Si un GPU NVIDIA (CUDA) est disponible, l'entrainement sera accelere. Sinon, il tourne sur le CPU.</p>
+<h4 id="62-monitor-wrapper">6.2. Monitor wrapper </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>env <span class="token operator">=</span> Monitor<span class="token punctuation">(</span>env<span class="token punctuation">,</span> log_file<span class="token punctuation">)</span>
+</code></pre><p>Le <code>Monitor</code> de Stable-Baselines3 <strong>enveloppe</strong> l'environnement pour enregistrer automatiquement dans <code>training_stats.csv</code> :</p>
+<ul>
+<li>La recompense cumulee de chaque episode</li>
+<li>La longueur de chaque episode (nombre de steps)</li>
+<li>Le temps ecoule</li>
+</ul>
+<h4 id="63-checkpoints">6.3. Checkpoints </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>checkpoint_callback <span class="token operator">=</span> CheckpointCallback<span class="token punctuation">(</span>
+    save_freq<span class="token operator">=</span><span class="token number">50000</span><span class="token punctuation">,</span>
+    save_path<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">(</span>BASE_DIR <span class="token operator">/</span> <span class="token string">"models"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    name_prefix<span class="token operator">=</span><span class="token string">"dqn_ids_model"</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre><p>Tous les <strong>50 000 steps</strong>, le modele est sauvegarde automatiquement dans <code>models/</code>. Cela permet de :</p>
+<ul>
+<li>Reprendre l'entrainement en cas de crash</li>
+<li>Comparer les performances a differentes etapes</li>
+</ul>
+<p>Les fichiers generes sont nommes <code>dqn_ids_model_50000_steps.zip</code>, <code>dqn_ids_model_100000_steps.zip</code>, etc.</p>
+<h4 id="64-configuration-du-dqn">6.4. Configuration du DQN </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>model <span class="token operator">=</span> DQN<span class="token punctuation">(</span>
+    <span class="token string">"MlpPolicy"</span><span class="token punctuation">,</span>
+    env<span class="token punctuation">,</span>
+    learning_rate<span class="token operator">=</span><span class="token number">5e-4</span><span class="token punctuation">,</span>
+    buffer_size<span class="token operator">=</span><span class="token number">100000</span><span class="token punctuation">,</span>
+    learning_starts<span class="token operator">=</span><span class="token number">5000</span><span class="token punctuation">,</span>
+    batch_size<span class="token operator">=</span><span class="token number">256</span><span class="token punctuation">,</span>
+    train_freq<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
+    gradient_steps<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
+    tau<span class="token operator">=</span><span class="token number">0.005</span><span class="token punctuation">,</span>
+    gamma<span class="token operator">=</span><span class="token number">0.99</span><span class="token punctuation">,</span>
+    exploration_fraction<span class="token operator">=</span><span class="token number">0.20</span><span class="token punctuation">,</span>
+    exploration_final_eps<span class="token operator">=</span><span class="token number">0.05</span><span class="token punctuation">,</span>
+    device<span class="token operator">=</span>device<span class="token punctuation">,</span>
+    verbose<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>
+    tensorboard_log<span class="token operator">=</span><span class="token builtin">str</span><span class="token punctuation">(</span>BASE_DIR <span class="token operator">/</span> <span class="token string">"tensorboard_logs"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span>
+</code></pre><p><strong>Explication de chaque hyperparametre :</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parametre</th>
+<th>Valeur</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MlpPolicy</code></td>
+<td>-</td>
+<td>Reseau de neurones "Multi-Layer Perceptron" (feedforward classique, 2 couches cachees de 64 neurones par defaut)</td>
+</tr>
+<tr>
+<td><code>learning_rate</code></td>
+<td><code>5e-4</code> (0.0005)</td>
+<td>Vitesse d'apprentissage. Trop haut = instable, trop bas = trop lent</td>
+</tr>
+<tr>
+<td><code>buffer_size</code></td>
+<td><code>100000</code></td>
+<td>Taille du <strong>Replay Buffer</strong> : memoire qui stocke les 100 000 dernieres experiences (s, a, r, s'). L'agent reapprend a partir d'experiences passees, ce qui stabilise l'entrainement</td>
+</tr>
+<tr>
+<td><code>learning_starts</code></td>
+<td><code>5000</code></td>
+<td>L'agent attend d'avoir accumule 5000 experiences avant de commencer a apprendre. Cela garantit un minimum de diversite dans le buffer</td>
+</tr>
+<tr>
+<td><code>batch_size</code></td>
+<td><code>256</code></td>
+<td>A chaque mise a jour, 256 experiences sont tirees aleatoirement du buffer pour calculer le gradient. Plus c'est grand, plus le gradient est stable mais plus c'est lent</td>
+</tr>
+<tr>
+<td><code>train_freq</code></td>
+<td><code>1</code></td>
+<td>Le reseau est mis a jour <strong>a chaque step</strong> (pas tous les N steps). Apprentissage agressif</td>
+</tr>
+<tr>
+<td><code>gradient_steps</code></td>
+<td><code>1</code></td>
+<td>1 mise a jour de gradient par step. Equilibre entre vitesse et stabilite</td>
+</tr>
+<tr>
+<td><code>tau</code></td>
+<td><code>0.005</code></td>
+<td>Taux de mise a jour <strong>soft</strong> du target network. DQN utilise deux reseaux : un "online" (qui apprend) et un "target" (qui fournit des cibles stables). Le target est mis a jour lentement : <code>target = 0.005 * online + 0.995 * target</code></td>
+</tr>
+<tr>
+<td><code>gamma</code></td>
+<td><code>0.99</code></td>
+<td>Facteur de <strong>discount</strong>. Controle l'importance des recompenses futures. 0.99 signifie que l'agent regarde loin dans le futur (mais ici chaque decision est quasi-independante, donc c'est surtout une convention)</td>
+</tr>
+<tr>
+<td><code>exploration_fraction</code></td>
+<td><code>0.20</code></td>
+<td>Pendant les premiers 20% des steps (40 000 sur 200 000), l'agent explore en prenant des actions aleatoires (strategie epsilon-greedy). Le taux d'exploration diminue lineairement de 1.0 a <code>exploration_final_eps</code></td>
+</tr>
+<tr>
+<td><code>exploration_final_eps</code></td>
+<td><code>0.05</code></td>
+<td>Apres la phase d'exploration, l'agent garde 5% de hasard. Cela evite de rester coince dans une politique sous-optimale</td>
+</tr>
+<tr>
+<td><code>verbose</code></td>
+<td><code>1</code></td>
+<td>Affiche les metriques d'entrainement dans la console</td>
+</tr>
+</tbody>
+</table>
+<h4 id="65-boucle-dentrainement">6.5. Boucle d'entrainement </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>model<span class="token punctuation">.</span>learn<span class="token punctuation">(</span>total_timesteps<span class="token operator">=</span><span class="token number">200000</span><span class="token punctuation">,</span> callback<span class="token operator">=</span>checkpoint_callback<span class="token punctuation">,</span> log_interval<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+</code></pre><p>L'agent s'entraine pendant <strong>200 000 steps</strong>. A chaque step :</p>
+<ol>
+<li>L'agent observe le flux courant (20 features normalisees)</li>
+<li>Il choisit une action (0 ou 1) via epsilon-greedy</li>
+<li>L'environnement retourne la recompense et le flux suivant</li>
+<li>L'experience est stockee dans le replay buffer</li>
+<li>Un batch de 256 experiences est tire du buffer</li>
+<li>Le gradient est calcule et le reseau est mis a jour</li>
+</ol>
+<h4 id="66-sauvegarde-finale">6.6. Sauvegarde finale </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>model<span class="token punctuation">.</span>save<span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>BASE_DIR <span class="token operator">/</span> <span class="token string">"dqn_network_security_final"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre><p>Le modele final est sauvegarde dans <code>dqn_network_security_final.zip</code>. Ce fichier contient :</p>
+<ul>
+<li>Les poids du reseau de neurones</li>
+<li>La configuration des hyperparametres</li>
+<li>L'architecture du reseau</li>
+</ul>
+<hr>
+<h2 id="7-script-4--test_modelpy---evaluation-formelle-du-modele">7. Script 4 : <code>test_model.py</code> - Evaluation formelle du modele </h2>
+<h3 id="role-3">Role </h3>
+<p>Evalue le modele entraine sur le <strong>dataset de test</strong> (jamais vu pendant l'entrainement) et produit des metriques de performance standard.</p>
+<h3 id="fonctionnement-detaille-3">Fonctionnement detaille </h3>
+<h4 id="71-inference-sur-le-dataset-de-test">7.1. Inference sur le dataset de test </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>obs<span class="token punctuation">,</span> info <span class="token operator">=</span> env<span class="token punctuation">.</span>reset<span class="token punctuation">(</span><span class="token punctuation">)</span>
+done <span class="token operator">=</span> <span class="token boolean">False</span>
+<span class="token keyword keyword-while">while</span> <span class="token keyword keyword-not">not</span> done<span class="token punctuation">:</span>
+    action<span class="token punctuation">,</span> _states <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>obs<span class="token punctuation">,</span> deterministic<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    agent_actions<span class="token punctuation">.</span>append<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+    true_label <span class="token operator">=</span> env<span class="token punctuation">.</span>labels<span class="token punctuation">[</span>env<span class="token punctuation">.</span>current_step<span class="token punctuation">]</span>
+    ground_truth<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token number">0</span> <span class="token keyword keyword-if">if</span> true_label <span class="token operator">==</span> <span class="token string">"BENIGN"</span> <span class="token keyword keyword-else">else</span> <span class="token number">1</span><span class="token punctuation">)</span>
+    obs<span class="token punctuation">,</span> reward<span class="token punctuation">,</span> terminated<span class="token punctuation">,</span> truncated<span class="token punctuation">,</span> info <span class="token operator">=</span> env<span class="token punctuation">.</span>step<span class="token punctuation">(</span>action<span class="token punctuation">)</span>
+    done <span class="token operator">=</span> terminated <span class="token keyword keyword-or">or</span> truncated
+</code></pre><ul>
+<li><code>deterministic=True</code> : l'agent utilise sa politique apprise <strong>sans aucune exploration aleatoire</strong> (mode evaluation pur)</li>
+<li>Pour chaque flux, on enregistre l'<strong>action de l'agent</strong> et la <strong>verite terrain</strong> (0 = benin, 1 = attaque)</li>
+</ul>
+<h4 id="72-matrice-de-confusion">7.2. Matrice de confusion </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>cm <span class="token operator">=</span> confusion_matrix<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">)</span>
+tn<span class="token punctuation">,</span> fp<span class="token punctuation">,</span> fn<span class="token punctuation">,</span> tp <span class="token operator">=</span> cm<span class="token punctuation">.</span>ravel<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre><p>La matrice de confusion est le tableau standard d'evaluation d'un classifieur binaire :</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>                    Prediction de l'agent
+                    PRODUCTION (0)     HONEYPOT (1)
+Realite  BENIGN        TN                 FP
+         ATTACK        FN                 TP
+</code></pre><table>
+<thead>
+<tr>
+<th>Metrique</th>
+<th>Signification</th>
+<th>Consequence en securite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TN</strong> (True Negative)</td>
+<td>Trafic benin correctement autorise</td>
+<td>OK - l'utilisateur accede normalement au service</td>
+</tr>
+<tr>
+<td><strong>FP</strong> (False Positive)</td>
+<td>Trafic benin envoye au honeypot par erreur</td>
+<td>Genant - un utilisateur legitime est bloque</td>
+</tr>
+<tr>
+<td><strong>FN</strong> (False Negative)</td>
+<td>Attaque non detectee, envoyee en production</td>
+<td><strong>CRITIQUE</strong> - l'attaque atteint le serveur reel</td>
+</tr>
+<tr>
+<td><strong>TP</strong> (True Positive)</td>
+<td>Attaque correctement redirigee vers le honeypot</td>
+<td>OK - l'attaque est isolee et peut etre etudiee</td>
+</tr>
+</tbody>
+</table>
+<h4 id="73-rapport-de-classification-sklearn">7.3. Rapport de classification (sklearn) </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code>classification_report<span class="token punctuation">(</span>y_true<span class="token punctuation">,</span> y_pred<span class="token punctuation">,</span> target_names<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"Production (Valid)"</span><span class="token punctuation">,</span> <span class="token string">"Honeypot (Threat)"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre><p>Genere automatiquement les metriques par classe :</p>
+<ul>
+<li><strong>Precision</strong> : parmi les flux envoyes au honeypot, quel % etait vraiment des attaques ?</li>
+<li><strong>Recall</strong> : parmi toutes les attaques, quel % a ete detecte ?</li>
+<li><strong>F1-score</strong> : moyenne harmonique de precision et recall</li>
+<li><strong>Support</strong> : nombre d'echantillons par classe</li>
+</ul>
+<hr>
+<h2 id="8-script-5--live_demopy---demonstration-en-temps-reel">8. Script 5 : <code>live_demo.py</code> - Demonstration en temps reel </h2>
+<h3 id="role-4">Role </h3>
+<p>Simule le fonctionnement de l'IDS <strong>en temps reel</strong>, paquet par paquet, avec un affichage lisible des decisions.</p>
+<h3 id="fonctionnement-detaille-4">Fonctionnement detaille </h3>
+<h4 id="81-boucle-de-traitement">8.1. Boucle de traitement </h4>
+<pre data-role="codeBlock" data-info="python" class="language-python python"><code><span class="token keyword keyword-for">for</span> i <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>num_packets<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    action<span class="token punctuation">,</span> _ <span class="token operator">=</span> model<span class="token punctuation">.</span>predict<span class="token punctuation">(</span>obs<span class="token punctuation">,</span> deterministic<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    true_label <span class="token operator">=</span> env<span class="token punctuation">.</span>labels<span class="token punctuation">[</span>env<span class="token punctuation">.</span>current_step<span class="token punctuation">]</span>
+    is_attack <span class="token operator">=</span> true_label <span class="token operator">!=</span> <span class="token string">"BENIGN"</span>
+</code></pre><p>Pour chaque paquet (jusqu'a <code>num_packets</code> = 10 000 par defaut) :</p>
+<ol>
+<li>Le modele predit l'action</li>
+<li>Le label reel est recupere pour verification</li>
+<li>La decision est comparee a la verite terrain</li>
+</ol>
+<h4 id="82-classification-des-resultats">8.2. Classification des resultats </h4>
+<p>Chaque decision tombe dans l'une des 4 categories :</p>
+<table>
+<thead>
+<tr>
+<th>Categorie</th>
+<th>Action</th>
+<th>Realite</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bon_autorise</code></td>
+<td>PRODUCTION</td>
+<td>BENIGN</td>
+<td>Correct - True Negative</td>
+</tr>
+<tr>
+<td><code>mauvais_bloque</code></td>
+<td>HONEYPOT</td>
+<td>ATTACK</td>
+<td>Correct - True Positive</td>
+</tr>
+<tr>
+<td><code>bon_bloque</code></td>
+<td>HONEYPOT</td>
+<td>BENIGN</td>
+<td>Erreur - False Positive</td>
+</tr>
+<tr>
+<td><code>mauvais_autorise</code></td>
+<td>PRODUCTION</td>
+<td>ATTACK</td>
+<td><strong>DANGER</strong> - False Negative</td>
+</tr>
+</tbody>
+</table>
+<h4 id="83-affichage">8.3. Affichage </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>STEP     | DECISION        | VERITE     | RESULTAT
+-------------------------------------------------------
+0        | PRODUCTION      | SAFE       | BON AUTORISE
+10       | HONEYPOT        | ATTACK     | MAUVAIS BLOQUE
+20       | PRODUCTION      | ATTACK     | MAUVAIS AUTORISE (FUITE!)
+</code></pre><p>L'affichage se fait toutes les <strong>10 lignes</strong> pour la lisibilite (les 50 premiers sont affiches un par un).</p>
+<h4 id="84-bilan-final">8.4. Bilan final </h4>
+<p>A la fin, un resume est affiche avec :</p>
+<ul>
+<li>Le nombre de decisions dans chaque categorie</li>
+<li>La <strong>precision globale</strong> : <code>(TN + TP) / total * 100</code></li>
+</ul>
+<hr>
+<h2 id="9-pipeline-dexecution-complet">9. Pipeline d'execution complet </h2>
+<h3 id="etape-1--preprocessing">Etape 1 : Preprocessing </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token builtin class-name">cd</span> RL-for-CyberSecurity-Attack-detection
+python cleanner.py
+</code></pre><p><strong>Entree :</strong> 5 fichiers CSV bruts dans <code>archive/</code><br>
+<strong>Sortie :</strong> <code>dataset_TRAIN_clean.csv</code> et <code>dataset_TEST_clean.csv</code><br>
+<strong>Duree estimee :</strong> 1 a 5 minutes selon la machine</p>
+<h3 id="etape-2--entrainement">Etape 2 : Entrainement </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>python RL_train.py
+</code></pre><p><strong>Entree :</strong> <code>dataset_TRAIN_clean.csv</code><br>
+<strong>Sortie :</strong> <code>dqn_network_security_final.zip</code>, <code>network_scaler.pkl</code>, checkpoints dans <code>models/</code><br>
+<strong>Duree estimee :</strong> 10 minutes a 2 heures (selon GPU/CPU)</p>
+<h3 id="etape-3--evaluation">Etape 3 : Evaluation </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>python test_model.py
+</code></pre><p><strong>Entree :</strong> <code>dataset_TEST_clean.csv</code> + modele entraine<br>
+<strong>Sortie :</strong> Matrice de confusion et rapport de classification (console)</p>
+<h3 id="etape-4--demo-optionnel">Etape 4 : Demo (optionnel) </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>python live_demo.py
+</code></pre><p><strong>Entree :</strong> <code>dataset_TEST_clean.csv</code> + modele entraine<br>
+<strong>Sortie :</strong> Simulation paquet par paquet avec verdicts (console)</p>
+<hr>
+<h2 id="10-fichiers-generes">10. Fichiers generes </h2>
+<table>
+<thead>
+<tr>
+<th>Fichier</th>
+<th>Genere par</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset_TRAIN_clean.csv</code></td>
+<td><code>cleanner.py</code></td>
+<td>Dataset d'entrainement nettoye (80% des donnees, ~20 colonnes)</td>
+</tr>
+<tr>
+<td><code>dataset_TEST_clean.csv</code></td>
+<td><code>cleanner.py</code></td>
+<td>Dataset de test nettoye (20% des donnees)</td>
+</tr>
+<tr>
+<td><code>network_scaler.pkl</code></td>
+<td><code>gymnasium_env.py</code></td>
+<td>Parametres de normalisation (moyenne et ecart-type de chaque feature) serialises avec joblib</td>
+</tr>
+<tr>
+<td><code>dqn_network_security_final.zip</code></td>
+<td><code>RL_train.py</code></td>
+<td>Modele DQN entraine (poids du reseau, config, architecture)</td>
+</tr>
+<tr>
+<td><code>training_stats.csv</code></td>
+<td><code>RL_train.py</code> (Monitor)</td>
+<td>Log des recompenses et longueurs d'episodes pendant l'entrainement</td>
+</tr>
+<tr>
+<td><code>models/dqn_ids_model_*_steps.zip</code></td>
+<td><code>RL_train.py</code> (Checkpoint)</td>
+<td>Sauvegardes intermediaires tous les 50 000 steps</td>
+</tr>
+<tr>
+<td><code>tensorboard_logs/</code></td>
+<td><code>RL_train.py</code></td>
+<td>Logs TensorBoard pour visualiser les courbes d'entrainement</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="11-hyperparametres-et-choix-de-conception">11. Hyperparametres et choix de conception </h2>
+<h3 id="pourquoi-dqn-plutot-quun-autre-algorithme-rl-">Pourquoi DQN plutot qu'un autre algorithme RL ? </h3>
+<ul>
+<li><strong>Espace d'actions discret</strong> : DQN est concu pour les problemes a actions discretes (ici 2 actions). PPO ou A2C fonctionneraient aussi, mais DQN est plus simple et performant pour des actions binaires.</li>
+<li><strong>Replay Buffer</strong> : DQN reutilise des experiences passees, ce qui est tres efficace quand les donnees sont sequentielles (un dataset de flux reseau).</li>
+<li><strong>Stabilite</strong> : le target network et le replay buffer rendent l'entrainement plus stable qu'un Q-learning tabulaire.</li>
+</ul>
+<h3 id="pourquoi-standardscaler-">Pourquoi StandardScaler ? </h3>
+<ul>
+<li>Les reseaux de neurones convergent beaucoup plus vite quand les entrees sont centrees-reduites</li>
+<li>Sans normalisation, les features a grande echelle (comme <code>Flow Duration</code> en microsecondes) domineraient les autres dans le gradient</li>
+</ul>
+<h3 id="pourquoi-un-split-8020-global-plutot-que-par-jour-">Pourquoi un split 80/20 global plutot que par jour ? </h3>
+<ul>
+<li>Un split par jour introduirait un biais : certains types d'attaques n'apparaissent qu'un seul jour</li>
+<li>Le melange global garantit que train et test contiennent <strong>tous les types d'attaques</strong> dans des proportions similaires</li>
+<li><code>random_state=42</code> rend le split reproductible</li>
+</ul>
+<h3 id="pourquoi-les-recompenses-sont-elles-asymetriques-">Pourquoi les recompenses sont-elles asymetriques ? </h3>
+<ul>
+<li>En securite, le <strong>cout d'un faux negatif</strong> (attaque non detectee) est infiniment superieur au <strong>cout d'un faux positif</strong> (utilisateur bloque)</li>
+<li>Le ratio -20 vs -2 force l'agent a prioriser la detection d'attaques, quitte a avoir quelques faux positifs</li>
+<li>Le ratio +5 vs +1 renforce positivement la detection d'attaques plus que la classification du benin</li>
+</ul>
+<h3 id="adaptation-des-chemins">Adaptation des chemins </h3>
+<p>Tous les scripts utilisent <code>pathlib.Path</code> avec <code>BASE_DIR = Path(__file__).resolve().parent</code> pour calculer les chemins <strong>relativement au script</strong>. Cela rend le projet portable : il fonctionne sur n'importe quelle machine (Windows, Linux, macOS) sans modifier les chemins.</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>BASE_DIR = RL-for-CyberSecurity-Attack-detection/   (dossier des scripts)
+DATA_DIR = archive/                                   (dossier des CSV bruts, un niveau au-dessus)
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

@@ -1,16 +1,19 @@
+from pathlib import Path
+
+from analysis_plots import save_evaluation_plots
 from gymnasium_env import NetworkSecurityEnv
 from stable_baselines3 import DQN
+
+BASE_DIR = Path(__file__).resolve().parent
 
 
 def run_live_demo(num_packets=5000):
     print(f"--- STARTING LIVE IDS DEMONSTRATION ({num_packets} PACKETS) ---")
 
-    # 1. Charger l'environnement de TEST
-    test_csv = "/home/pepito/Documents/Python/Reddis/RL/dataset_TEST_clean.csv"
+    test_csv = str(BASE_DIR / "dataset_TEST_clean.csv")
     env = NetworkSecurityEnv(test_csv, is_training=False)
 
-    # 2. Charger le modèle
-    model_path = "/home/pepito/Documents/Python/Reddis/RL/dqn_network_security_final"
+    model_path = str(BASE_DIR / "dqn_network_security_final")
     try:
         model = DQN.load(model_path)
         print("Model loaded successfully.\n")
@@ -25,6 +28,9 @@ def run_live_demo(num_packets=5000):
         "bon_bloque": 0,  # False Positive (Erreur)
         "mauvais_autorise": 0,  # False Negative (Danger !)
     }
+    agent_actions = []
+    ground_truth = []
+    rewards = []
 
     obs, info = env.reset()
 
@@ -38,6 +44,8 @@ def run_live_demo(num_packets=5000):
         # Récupération du label réel AVANT le step
         true_label = env.labels[env.current_step]
         is_attack = true_label != "BENIGN"
+        agent_actions.append(int(action))
+        ground_truth.append(1 if is_attack else 0)
 
         # Logique de comparaison
         if action == 1:  # Bloqué (Honeypot)
@@ -63,6 +71,7 @@ def run_live_demo(num_packets=5000):
 
         # Exécuter le pas dans l'env
         obs, reward, terminated, truncated, info = env.step(action)
+        rewards.append(reward)
 
         if terminated or truncated:
             break
@@ -81,6 +90,13 @@ def run_live_demo(num_packets=5000):
     accuracy = (stats["bon_autorise"] + stats["mauvais_bloque"]) / total * 100
     print(f"PRÉCISION GLOBALE : {accuracy:.2f}%")
     print("=" * 50)
+    save_evaluation_plots(
+        ground_truth,
+        agent_actions,
+        rewards,
+        output_prefix="live_demo",
+    )
+    print(f"Live demo graphs and interpretations exported to: {BASE_DIR / 'results'}")
 
 
 if __name__ == "__main__":

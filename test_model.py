@@ -1,22 +1,25 @@
+from pathlib import Path
+
+from analysis_plots import save_evaluation_plots
 from gymnasium_env import NetworkSecurityEnv
 from sklearn.metrics import classification_report, confusion_matrix
 from stable_baselines3 import DQN
+
+BASE_DIR = Path(__file__).resolve().parent
 
 
 def test_agent():
     print("--- DQN MODEL EVALUATION PHASE ---")
 
-    # Load environment flagged for evaluation (uses preserved scaling parameters)
-    test_csv = "/home/pepito/Documents/Python/Reddis/RL/dataset_TEST_clean.csv"
+    test_csv = str(BASE_DIR / "dataset_TEST_clean.csv")
     env = NetworkSecurityEnv(test_csv, is_training=False)
 
     print("Loading trained deep neural policy framework...")
-    model = DQN.load(
-        "/home/pepito/Documents/Python/Reddis/RL/dqn_network_security_final"
-    )
+    model = DQN.load(str(BASE_DIR / "dqn_network_security_final"))
 
     agent_actions = []
     ground_truth = []
+    rewards = []
 
     obs, info = env.reset()
     done = False
@@ -30,10 +33,13 @@ def test_agent():
         ground_truth.append(0 if true_label == "BENIGN" else 1)
 
         obs, reward, terminated, truncated, info = env.step(action)
+        rewards.append(reward)
         done = terminated or truncated
 
     print("Evaluation engine process tracking complete.\n")
     analyze_results(ground_truth, agent_actions)
+    save_evaluation_plots(ground_truth, agent_actions, rewards)
+    print(f"Evaluation graphs and interpretations exported to: {BASE_DIR / 'results'}")
 
 
 def analyze_results(y_true, y_pred):
